@@ -1,0 +1,57 @@
+桁パターン解析
+※前提として、0の場合はランダムとする。
+
+1桁目　xx0x～xx9xまで存在し、なおかつ乱数1～3まであるので以下略。
+1段階：1～4　2段階：5～9　3段階：10～14　4段階：15～19　5段階：20～24　6段階：25～27
+
+2桁目　xxx0～xxx9まで存在し、なおかつ乱数1～3まであるので以下略。
+1段階：1～4　2段階：5～9　3段階：10～14　4段階：15～19　5段階：20～24　6段階：25～27
+
+3桁目　0,1しか存在しないが、乱数を踏まえても少ないのは必至なのですべてランダムで判断する。
+
+4桁目　0～9まで存在し、乱数1～3を踏まえて1x1=1から9x3=27でうまく分ける必要がある。
+1段階：1～4　2段階：5～9　3段階：10～14　4段階：15～19　5段階：20～24　6段階：25～27
+
+5桁目　0～3まで存在し、乱数1～3を踏まえて1x1=1から9x3=27でうまく分ける必要がある。
+1段階：1～4　2段階：5～9　3段階：10～14　4段階：15～19　5段階：20～24　6段階：25～27
+
+6桁目　0～9まで存在し、乱数1～3を踏まえて1x1=1から9x3=27でうまく分ける必要がある。
+1段階：1～4　2段階：5～9　3段階：10～14　4段階：15～19　5段階：20～24　6段階：25～27
+
+補足せん：運勢が3ジャンル以上において最高値27を記録した場合
+
+占いの元になる変数のうち3個以上が27になったらば
+「スゴイ級幸運な」という趣旨の
+メッセージを表示するためには？
+
+足し算をする！
+１：変数を作って0を代入。
+２：値が27ならば変数に1を足す。
+３：最終的に値が3を超えていたらメッセージ表示！
+
+
+
+Analyse numeric patterns
+Notice: As a premise, it will be random at the time of zero-num.
+
+Digit-1 (xx0x~xx9x, random1~3) From 1*1 to 9*3. Separate it nicely.
+Digit-2 (xxx0~xxx9, random1~3) From 1*1 to 9*3. Separate it nicely.
+Digit-3 (0x+10~12, random1~3) All of them judge with random function.
+Digit-4 (x0~x9, random1~3) From 1*1 to 9*3. Separate it nicely.
+Digit-5 (0x~3x, random1~3) From 1*1 to 9*3. Separate it nicely.
+Digit-6 (x0~x9, random1~3) From 1*1 to 9*3. Separate it nicely.
+
+Message Select Pattern for Digit-1, 2, 4~6
+Grade 1: 1~4           Grade 2: 5~9
+Grade 3: 10~14         Grade 4: 15~19
+Grade 5: 20~24         Grade 6: 25~27
+
+Supplement: The pattern when the fortunes more than 3 are calculated 27
+
+When it calculated more than 3 the variable on which the result is derived,
+Show the message box of "You're extremely lucky!".
+
+Addition-Cal!
+Step1: Declare the variable and substitute 0.
+Step2: When the fortune variable is 27, add 1 to the variable.
+Step3: If the value finally exceeds 3, show the message!
